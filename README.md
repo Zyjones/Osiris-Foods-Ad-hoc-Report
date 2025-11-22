@@ -1,43 +1,60 @@
-# Instagram Ad-hoc Analysis
+<p align="center">
+  <img src="OsirisFood_logo.png" alt="Centered Image" width="200" height="200">
+</p>
 
-You are a data analyst at an NYC-based wholesale food supplier called Osiris-Foods. As part of your companies mission to make more data-driven decisions, you are tasked with generating an ad-hoc report on your companies database. You will report on descriptive statistics using SQL and generate respective visualizations using pandas to provide your company an overview of its' past performance.
 
-For this project, you will analyze an ERD diagram to formulate DML SQL queries within a Jupyter notebook, and provide a write-up of your findings. 
+# <center>Osiris-Foods Ad-hoc Report<center> 
 
-Keep in mind that your write-up should include pertinent numerical details to back your findings. Any claim that you make must be supported by evidence!
+## <center>Client Background<center>
+**Osiris-Foods** is a NYC-based wholesale food supplier. 
 
-## Instructions
 
-### Market.db
 
-Before beginning your project, we recommend checking out the ERD diagram below:
+Reporting to the CEO, an ad-hoc report was conducted to evaluate **Osiris-Foods** performance. This comprehensive review provides valuable insights that will help advance their performance. The report focuses on the following areas:
+### Nortstar Metrics
+- Customer–Supplier Market Strength
+- Product Performance Efficiency
+- Country Order Engagement
+- Supplier Order Dominance
 
+
+### Dataset Structure and ERD  
 ![ERD Diagram](/images/Northwind_E-R_Diagram.png)  
 *ERD Diagram of Market Database*
 
-Use this ERD diagram to formulate how you should form your joins across tables and to find out more about your table's columns.
 
-If you download the `sqlite3` VSCode extension, you will also be able to open your database within your code editor to view the content and columns of your table.
+## Insights Deep Dive
+### Customer-Supplier Market Strength
+Which countries have the greatest number of customers? How does this correlate with the number of suppliers by country?
 
-Note that you can also test out your SQL queries in `sqlite3` by opening your database in your command line or terminal. Check out the [guide](https://datacarpentry.github.io/sql-socialsci/instructor/08-sqlite-command-line.html) for more information on how to interact with your database in the shell.
+* **USA has the greatest number of customers.** It leads will 13 customers. The next two highest countries with 11 customers are Germany and France. The countries with the greatest numbers of suppliers is also USA with 4 suppliers, and Germany and France with 3 suppliers. Therefore it seems like more customers lead to more suppliers.
 
-### adhoc_report.ipynb
+<p align="center">
+  <img src="images/Count _Suppliers_VS_Customers_Country.png" alt="Centered Image" w>
+</p>
 
-Within this Jupyer notebook, you will write Python code and SQL queries to answer 8 ad-hoc questions. Each question will involve you creating an appropriate DML SQL query and observing this output.
+### Product Performance Efficiency
+What is the least popular product by order quantity? How does this correlate with revenue?
 
-After you've verified that your query's output sufficiently answers the question, you will then create a pandas dataframe using this output and finally generate a visualization from this dataframe.
+* **The least popular product by order quantity is the Laughing Lumberjack Lager with 5 orders.** Next is Røgede sild with 15 quantity orders. The less popular products quantity has less revenue. The Laughing Lumberjack Lager only had $70 in revenue and Røgede sild had the next lowest total revenue with $142.50.
 
-Just as in the `weather-analysis` project, we will not directly indicate which visualizations you should make. Instead, we ask that you use your notes and study material to discern appropriate visualizations.
+<p align="center">
+  <img src="images/Least_Popular_Products_Order_Quantity_VS_Revenue.png" alt="Centered Image" w>
+</p>
 
-Test your queries in the shell, and be sure to *iteratively* build your queries. Especially when we are first learning SQL, we rarely come up with an immediate answer. Start with your basic structure (`SELECT ... FROM ...`) and build up to the correct answer.
+### Country Order Engagement
+Which country has the most orders? How does this correlate with the number of customers who do not order (i.e. do countries with more ordering customers have more or less non-ordering customers)? Which evidence supports your answer?
 
-## Submission 
+* **The USA has the most orders with 29 orders.** The country with the most customers with no orders is USA with 5. **The countries with more ordering customers have more non-ordering customers.** Germany and France also have high order counts with Germany having 25 and France having 18 orders. France has 4 customers with no orders and Germany has 2 customers.
 
-Your first checkpoint for this project will be due by `6/20`. The final due date for this project is `6/27`. 
+<p align="center">
+  <img src="images/Countries_Most_Orders_VS_Orders_No_Customers.png" alt="Centered Image" w>
+</p>
 
-To begin work on this project, you will download this template code and push it to your GitHub repository. 
+### Supplier Order Dominance
+Which supplier has the most orders?
+* **Pavlolva, Ltd.** and **Plutzer Lebensmittelgroßmärkte AG** have the most orders with 37 orders. 
 
-While there are no tests for this project, be sure to remove all errors from your code before submitting and ensure that the outputs you generate answer each question. 
-
-To submit this project, you will submit a link to your completed GitHub repository to Canvas.
-
+<p align="center">
+  <img src="images/Most_Popular_Suppliers.png" alt="Centered Image" w>
+</p>
